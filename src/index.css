@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0a0a;
+  --text: #f0f0f0;
+  --accent: #e8ff00;
+  --accent2: teal;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --max-width: 600px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: monospace;
+}
+
+nav {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-bottom: 1px solid #222;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+
+nav button:hover {
+  color: var(--accent);
+}
+
+.event-card {
+  max-width: var(--max-width);
+  margin: var(--space-lg) auto;
+  padding: var(--space-md);
+  border-bottom: 1px solid #222;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.event-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.event-card span {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #888;
+}
+
+.event-card h2 {
+  margin: var(--space-sm) 0;
+  letter-spacing: 0.05em;
+}
+
+.event-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: var(--space-md);
+}
+
+.logo {
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  padding: var(--space-lg) var(--space-md) var(--space-sm);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.subtitle {
+  padding: 0 var(--space-md) var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+}
+
+.flyer {
+  width: 100%;
+  max-width: var(--max-width);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.description {
+  max-width: var(--max-width);
+  margin: var(--space-lg) auto;
+  padding: 0 var(--space-md);
+  line-height: 1.7;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  padding: var(--space-lg);
+  margin-top: var(--space-lg);
+  border-top: 1px solid #222;
+}
+
+footer a {
+  color: var(--accent2);
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
