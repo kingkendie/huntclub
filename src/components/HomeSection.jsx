@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const CORRECT_ORDER = ['m', 'a', 'k', 'a'];
 
-export default function HomeSection() {
+export default function HomeSection({ onUnlock}) {
     const [inputSequence, setInputSequence] = useState([]);
 
     const handleSecretButtonClick = (key) => {
