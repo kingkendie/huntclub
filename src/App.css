@@ -182,3 +182,19 @@
     border-right-color: var(--border);
   }
 }
+
+.secret-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: lightblue;
+  user-select: none;
+}
