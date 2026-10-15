@@ -13,6 +13,7 @@
   --space-md: 1rem;
   --space-lg: 2rem;
   --max-width: 600px;
+  --grid-width: 1100px;
 }
 
 body {
@@ -42,9 +43,61 @@ nav button:hover {
   color: var(--accent);
 }
 
-.event-card {
+.view-site-btn,
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-family: monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  padding: 0;
+  margin-top: var(--space-md);
+}
+
+.back-btn {
+  display: block;
   max-width: var(--max-width);
+  margin: var(--space-md) auto 0;
+  padding: 0 var(--space-md);
+  width: 100%;
+  text-align: left;
+}
+
+.view-site-btn:hover,
+.back-btn:hover {
+  color: var(--accent);
+}
+
+.section-title {
+  max-width: var(--grid-width);
+  margin: var(--space-lg) auto 0;
+  padding: 0 var(--space-md);
+  letter-spacing: 0.1em;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg) var(--space-md);
+  max-width: var(--grid-width);
   margin: var(--space-lg) auto;
+}
+
+@media (min-width: 600px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.event-card {
   padding: var(--space-md);
   border-bottom: 1px solid #222;
   opacity: 0;

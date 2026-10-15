@@ -2,7 +2,9 @@ import { useEffect } from 'react'
 import events from '../data/events'
 import EventCard from './EventCard'
 
-function EventsSection(){
+const sorted = [...events].sort((a, b) => new Date(b.date) - new Date(a.date))
+
+function EventsSection({ onViewSite }){
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -23,14 +25,15 @@ function EventsSection(){
 
     return (
         <section>
-            <h2>Past Events</h2>
+            <h2 className="section-title">Past Events</h2>
 
-            {events.map(event => (
-                <EventCard key={event.id} event={event} />
-            ))}
+            <div className="events-grid">
+                {sorted.map(event => (
+                    <EventCard key={event.id} event={event} onViewSite={onViewSite} />
+                ))}
+            </div>
         </section>
     )
 }
 
-console.log(events)
 export default EventsSection
